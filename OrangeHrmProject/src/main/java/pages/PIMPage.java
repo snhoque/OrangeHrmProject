@@ -22,6 +22,7 @@ public class PIMPage {
     private WebElement firstNameElement;
     @FindBy(xpath = "//div[@class=\"oxd-table-row oxd-table-row--with-border oxd-table-row--clickable\"]/div[4]/div")
     private WebElement lastNameElement;
+    @FindBy(linkText = "Admin") private WebElement adminLink;
 
 
 
@@ -42,6 +43,13 @@ public class PIMPage {
         Assert.assertEquals(firstNameElement.getText(), firstName);
         Assert.assertEquals(lastNameElement.getText(), lastName);
         return this;
+    }
+
+    public AdminPage navigateToAdminPage(){
+        adminLink.click();
+        return PageFactory.initElements(Browser.driver, AdminPage.class);
+
+
     }
 
 }
