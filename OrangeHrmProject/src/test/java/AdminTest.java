@@ -9,6 +9,7 @@ public class AdminTest extends TestBase {
                 .navigateToAdminPage()
                 .searchUserName("Aaliyah.Haq")
                 .validateUserName("Aaliyah.Haq");
+        //comment
 
     }
 }
